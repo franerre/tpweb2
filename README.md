@@ -1,2 +1,2 @@
-Integrantes=Errezarret Franco, Lescano Agustin
-hola
+Integrantes = Errezarret Franco, Lescano Agustin
+Descrpcion =
