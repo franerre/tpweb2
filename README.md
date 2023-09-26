@@ -1,4 +1,5 @@
-Integrantes = Errezarret Franco(franerre15@gmail.com), Lescano Agustin(agustinlescanouni@gmail.com)
-Tematica = futbol
-Descripción = La pagina se basa en los goleadores del futbol europeo en la temporada 2023
-diagrama entidad relación (DER):file:///D:/xampp/htdocs/tpweb2/diagrama%20entidad%20relaci%C3%B3n%20(DER).jpeg
+Integrantes = Errezarret Franco(franerre15@gmail.com), Lescano Agustin(agustinlescanouni@gmail.com).
+Tematica = futbol.
+Descripción = La pagina se basa en el futbol europeo, donde se podra ver a los goleadores de la temporada 2023 con sus respectivos equipos, liga y pais de la misma.
+diagrama entidad relación (DER): https://github.com/franerre/tpweb2/blob/master/diagrama_entidad_relación(DER).jpg
+
