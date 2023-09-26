@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-09-2023 a las 02:08:25
+-- Tiempo de generación: 26-09-2023 a las 02:56:25
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -69,16 +69,16 @@ CREATE TABLE `jugadores` (
 --
 
 INSERT INTO `jugadores` (`id`, `nombre`, `apellido`, `goles`, `id_equipo`) VALUES
-(11, 'Erling', 'Haaland', 37, 1),
-(12, 'Kylian', 'Mbappe', 33, 4),
-(13, 'Harry', 'Kane', 32, 6),
-(14, 'Victor', 'Osimhen', 29, 3),
-(15, 'Lautaro', 'Martinez', 26, 2),
-(16, 'Romelu', 'Lukaku', 24, 5),
-(17, 'Robert', 'Lewandowski', 24, 9),
-(18, 'Karim', 'Benzema', 23, 7),
-(19, 'Jonathan', 'David', 23, 10),
-(20, 'Alexandre', 'Lacazette', 22, 8);
+(1, 'Erling', 'Haaland', 37, 1),
+(2, 'Kylian', 'Mbappe', 33, 4),
+(3, 'Harry', 'Kane', 32, 6),
+(4, 'Victor', 'Osimhen', 29, 3),
+(5, 'Lautaro', 'Martinez', 26, 2),
+(6, 'Romelu', 'Lukaku', 24, 5),
+(7, 'Robert', 'Lewandowski', 24, 9),
+(8, 'Karim', 'Benzema', 23, 7),
+(9, 'Jonathan', 'David', 23, 10),
+(10, 'Alexandre', 'Lacazette', 22, 8);
 
 --
 -- Índices para tablas volcadas
