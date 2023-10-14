@@ -1,0 +1,15 @@
+.item-task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-task.finalizada {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+h1{
+    display: flex;
+    padding-top: 5%;
+}
