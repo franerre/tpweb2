@@ -1,17 +1,22 @@
 <?php
 
-class TaskView {
+class EquiposView {
    
-    public function showTasks($tasks) {
-        $count = count($tasks);
+   
+
+    public function showequipos($equipos) {
+        $count = count($equipos);
 
         // NOTA: el template va a poder acceder a todas las variables y constantes que tienen alcance en esta funcion
 
         // mostrar el template
-        require 'templates/taskList.phtml';
+        require 'templates/equiposList.phtml';
     }
 
     public function showError($error) {
         require 'templates/error.phtml';
     }
+    
+    
+
 }
