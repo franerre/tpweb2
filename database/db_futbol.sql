@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-10-2023 a las 01:19:53
+-- Tiempo de generación: 17-10-2023 a las 01:19:04
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -39,16 +39,17 @@ CREATE TABLE `equipos` (
 --
 
 INSERT INTO `equipos` (`id`, `equipo`, `liga`, `pais`) VALUES
-(1, 'Manchester City', 'Premier League', 'Inglaterra'),
-(2, 'Lille Olympique', 'League One', 'Francia'),
-(3, 'Inter de Milán ', 'Serie A', 'Italia'),
-(4, 'Napoli', 'Serie A', 'Italia'),
-(5, 'PSG', 'League One', 'Francia'),
-(6, 'La Roma', 'Serie A', 'Italia'),
-(7, 'Bayern de Múnich', 'Bundesliga', 'Alemania'),
-(8, 'Ittihad FC', 'Liga Profesional Saudí', 'Arabia Saudita'),
-(9, 'Olympique de Lyon', 'League One', 'Francia'),
-(10, 'Barcelona', 'LaLiga', 'España');
+(0, 'Manchester City', 'Premier League', 'Inglaterra'),
+(1, 'Lille Olympique', 'League One', 'Francia'),
+(2, 'Inter de Milán ', 'Serie A', 'Italia'),
+(3, 'Napoli', 'Serie A', 'Italia'),
+(4, 'PSG', 'League One', 'Francia'),
+(5, 'La Roma', 'Serie A', 'Italia'),
+(6, 'Bayern de Múnich', 'Bundesliga', 'Alemania'),
+(7, 'Ittihad FC', 'Liga Profesional Saudí', 'Arabia Saudita'),
+(8, 'Olympique de Lyon', 'League One', 'Francia'),
+(9, 'Barcelona', 'LaLiga', 'España'),
+(10, 'manchester', 'premier', 'ingl');
 
 -- --------------------------------------------------------
 
@@ -60,9 +61,17 @@ CREATE TABLE `jugadores` (
   `id` int(11) NOT NULL,
   `nombre` varchar(200) NOT NULL,
   `apellido` varchar(200) NOT NULL,
-  `finalizada` tinyint(1) NOT NULL DEFAULT 0,
   `id_equipo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `jugadores`
+--
+
+INSERT INTO `jugadores` (`id`, `nombre`, `apellido`, `id_equipo`) VALUES
+(21, 'fran', 'Errezarret', 5),
+(22, 'fran', 'Messi', 0),
+(55, 'xd', 'lol', 0);
 
 -- --------------------------------------------------------
 
@@ -72,8 +81,8 @@ CREATE TABLE `jugadores` (
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
-  `email` varchar(250) NOT NULL,
-  `password` varchar(250) NOT NULL
+  `email` varchar(250) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `password` varchar(250) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -81,7 +90,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `email`, `password`) VALUES
-(1, 'franerre15@gmail.com', '12345');
+(1, 'franerre15@gmail.com', '$2y$10$L2Fr/m2ADI8MXbvAPns.O.mM6DbF/3sXPAajIHRjtdayLp7a0.5Pm');
 
 --
 -- Índices para tablas volcadas
@@ -114,19 +123,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `equipos`
 --
 ALTER TABLE `equipos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `jugadores`
 --
 ALTER TABLE `jugadores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
