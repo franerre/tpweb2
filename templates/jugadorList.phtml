@@ -1,0 +1,23 @@
+<?php require 'templates/header.phtml' ?>
+<?php require 'templates/form_jugadores.phtml' ?>
+
+<h1>Top 10 goleadores del fulvo europeo</h1>
+<div class="container-jugadores">
+    <?php foreach ($jugadores as $jugador) : ?>
+        <div class="card">
+
+                <h2 ><?= $jugador->nombre . ' ' . $jugador->apellido . ' ' . $jugador->id_equipo ?></h2>
+               
+            
+            <a href="eliminar/<?= $jugador->id ?>" class="delete-button">Borrar</a>
+            <a href="editar/<?= $jugador->id ?>" class="edit-button">Editar</a>
+        </div>
+    <?php endforeach ?>
+</div>
+
+<p class="contador-jugadores"><small>Mostrando <?= $count ?> jugadores</small></p>
+
+<?php require 'templates/footer.phtml' ?>
+
+
+

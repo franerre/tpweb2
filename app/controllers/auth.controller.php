@@ -29,7 +29,7 @@ class AuthController {
         $user = $this->model->getByEmail($email);
         
         if ($user && password_verify($password, $user->password)) {
-            
+            var_dump($user);
             // Contraseña válida
             AuthHelper::login($user);
             

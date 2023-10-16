@@ -1,5 +1,6 @@
 <?php
-require_once './app/controllers/task.controller.php';
+require_once './app/controllers/jugadores.controller.php';
+require_once './app/controllers/equipos.controller.php';
 require_once './app/controllers/about.controller.php';
 require_once './app/controllers/auth.controller.php';
 
@@ -24,21 +25,36 @@ $params = explode('/', $action);
 
 switch ($params[0]) {
     case 'listar':
-        $controller = new TaskController();
-        $controller->showTasks();
+        $controller = new JugadoresController();
+        $controller->showJugadores();
         break;
     case 'agregar':
-        $controller = new TaskController();
-        $controller->addTask();
+        $controller = new JugadoresController();
+        $controller->addJugadores();
         break;
     case 'eliminar':
-        $controller = new TaskController();
-        $controller->removeTask($params[1]);
+        $controller = new JugadoresController();
+        $controller->removeJugadores($params[1]);
         break;
-    case 'finalizar':
-        $controller = new TaskController();
-        $controller->finishTask($params[1]);
-        break;
+
+        case 'listarequipos':
+            $controller = new EquiposController();
+            $controller->showEquipos();
+            break;
+        case 'agregarequipos':
+            $controller = new EquiposController();
+            $controller->addEquipos();
+            break;
+        case 'eliminarequipo':
+                $controller = new EquiposController();
+                $controller->removeEquipos($params[1]);
+                break;
+        case 'equipos':
+            $controller = new EquiposController();
+            $controller->showEquipos(); // Método para mostrar el formulario de equipos
+            break;
+                
+    
     case 'about':
         $controller = new AboutController();
         $controller->showAbout();
@@ -55,6 +71,22 @@ switch ($params[0]) {
             $controller = new AuthController();
             $controller->logout();
             break;
+            case 'editar':
+                $controller = new JugadoresController();
+                $controller->editJugadores($params[1]);
+                break;
+            
+                case 'actualizar':
+                    $controller = new JugadoresController();
+                    $controller->updateJugadores();
+                    break;
+                    case 'actualizarequipos':
+                        $controller = new EquiposController();
+                        $controller->updateEquipos();
+                        break;
+                
+        
+            
     default: 
         echo "404 Page Not Found";
         break;
