@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-10-2023 a las 01:19:04
+-- Tiempo de generación: 17-10-2023 a las 21:54:50
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -49,7 +49,7 @@ INSERT INTO `equipos` (`id`, `equipo`, `liga`, `pais`) VALUES
 (7, 'Ittihad FC', 'Liga Profesional Saudí', 'Arabia Saudita'),
 (8, 'Olympique de Lyon', 'League One', 'Francia'),
 (9, 'Barcelona', 'LaLiga', 'España'),
-(10, 'manchester', 'premier', 'ingl');
+(10, 'Manchester United', 'Premier League', 'Inglaterra');
 
 -- --------------------------------------------------------
 
@@ -69,9 +69,39 @@ CREATE TABLE `jugadores` (
 --
 
 INSERT INTO `jugadores` (`id`, `nombre`, `apellido`, `id_equipo`) VALUES
-(21, 'fran', 'Errezarret', 5),
-(22, 'fran', 'Messi', 0),
-(55, 'xd', 'lol', 0);
+(59, 'Erling ', 'Haaland', 0),
+(62, 'Julian ', 'Alvarez', 0),
+(63, 'Phil ', 'Foden', 0),
+(64, 'Robert ', 'Lewandowski', 9),
+(66, 'Ferran ', 'Torres', 9),
+(68, 'Jules ', 'Koundé', 9),
+(70, 'Jonathan ', 'David', 1),
+(72, 'Benjamin ', 'André', 1),
+(75, 'Rémy ', 'Cabella', 1),
+(76, 'Lautaro', 'Martinez', 2),
+(78, 'Hakan ', 'Calhanoglu', 2),
+(79, 'Henrikh ', 'Mkhitaryan', 2),
+(83, 'Victor ', 'Osimhen', 3),
+(85, 'Matteo', 'Politano', 3),
+(87, 'Piotr ', 'Zielinski', 3),
+(89, 'Kylian ', 'Mbappé', 4),
+(91, 'Achraf ', 'Hakimi', 4),
+(93, 'Goncalo ', 'Ramos', 4),
+(94, 'Romelu ', 'Lukaku', 5),
+(96, 'Andrea ', 'Belotti', 5),
+(98, 'Paulo ', 'Dybala', 5),
+(100, 'Harry ', 'Kane', 6),
+(102, 'Leroy ', 'Sané', 6),
+(103, 'Jamal ', 'Musiala', 6),
+(105, 'Karim ', 'Benzema', 7),
+(107, 'N\'Golo ', 'Kanté', 7),
+(109, 'Igor ', 'Coronado', 7),
+(111, 'Alexandre ', 'Lacazette', 8),
+(113, 'Nicolás ', 'Tagliafico', 8),
+(115, 'Corentin ', 'Tolisso', 8),
+(117, 'Bruno ', 'Fernandes', 10),
+(119, 'Marcus ', 'Rashford', 10),
+(121, 'Raphaël ', 'Varane', 10);
 
 -- --------------------------------------------------------
 
@@ -123,13 +153,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `equipos`
 --
 ALTER TABLE `equipos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `jugadores`
 --
 ALTER TABLE `jugadores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

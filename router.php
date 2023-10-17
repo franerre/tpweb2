@@ -30,6 +30,11 @@ switch ($params[0]) {
         $homeController = new HomeController();
         $homeController->showHome();
         break;
+        case 'verjugadores':
+            $controller = new EquiposController();
+            $controller->verJugadores($params[1]);
+            break;
+        
     case 'jugadores':
         $controller = new JugadoresController();
         $controller->showJugadores();
