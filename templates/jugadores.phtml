@@ -1,0 +1,14 @@
+<?php require './templates/header.phtml';?>
+
+
+    <div class="container-jugadores">
+    <h1>jugadores del fulvo europeo</h1>
+    <?php foreach ($jugadores as $jugador) : ?>
+    <div class="card">
+        <div class="jugador-info">
+            <h2><?= $jugador->nombre . ' ' . $jugador->apellido . ' ' . $jugador->id_equipo ?></h2>
+        </div>
+    </div>
+<?php endforeach ?>
+
+    </div>

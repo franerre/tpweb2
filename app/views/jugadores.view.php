@@ -7,6 +7,9 @@ class JugadoresView {
         require 'templates/jugadorList.phtml';
     }
 
+   
+    
+
 
     public function showError($error) {
         require 'templates/error.phtml';

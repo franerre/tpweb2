@@ -19,28 +19,36 @@
         <nav >
             <div class="container-nav">
                 
+                        
+                
+            <?php if (!isset($_SESSION['USER_ID'])) : ?>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="">Goleadores</a>
+                        <a class="nav-link" aria-current="page" href="home">Futbol</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="">jugadores</a>
+                            <a class="nav-link" href="<?= BASE_URL ?>home">Equipos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= BASE_URL ?>equipos">Equipos</a>
-                    </li>
-
+                            <a class="nav-link" aria-current="page" href="<?= BASE_URL ?>home">Jugadores</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="about">About</a>
                         </li>
                         
-                       
-
-                        
-                        <?php if (!isset($_SESSION['USER_ID'])) : ?>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="login">Login</a>
                         </li>
-                        <?php else : ?>
+
+            <?php else : ?>
+
+                        <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="">Futbol</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="<?= BASE_URL ?>equipos">Equipos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="<?= BASE_URL ?>jugadores">Jugadores</a>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="logout">Logout (<?= $_SESSION['USER_EMAIL'] ?>)</a>
                         </li>

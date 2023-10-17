@@ -16,7 +16,7 @@ class JugadoresController {
         
     }
 
-
+    
     public function showJugadores() {
         $jugadoresModel = new JugadoresModel();
         $equiposModel = new EquiposModel();
@@ -25,10 +25,8 @@ class JugadoresController {
         $this->view->showJugadores($jugadores, $equipos); 
         
     }
-    
    
     
-
     public function addJugadores() {
 
         // obtengo los datos del usuario
