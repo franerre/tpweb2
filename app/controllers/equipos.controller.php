@@ -16,6 +16,16 @@ class EquiposController {
         
     }
 
+    public function verJugadores($id_equipo) {
+        // Lógica para obtener los jugadores asociados al equipo con el ID $id_equipo
+        $jugadoresModel = new JugadoresModel();
+        $jugadores = $jugadoresModel->getJugadoresByEquipo($id_equipo);
+        
+        // Luego, muestra la vista que contiene la lista de jugadores
+        $this->view->showJugadores($jugadores, $equipos);
+    }
+    
+
 
     public function showEquipos() {
         $equiposModel = new EquiposModel();
