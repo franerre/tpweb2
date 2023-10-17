@@ -1,0 +1,18 @@
+<?php require './templates/header.phtml';?>
+
+
+    <div class="container-jugadores">
+    <h1>equipos del fulvo europeo</h1>
+    <?php foreach ($equipos as $equipo) : ?>
+    <div class="card">
+        <div class="jugador-info">
+            <h2><?= $equipo->equipo . ' ' . $equipo->liga . ' ' . $equipo->pais ?></h2>
+            <a href="filtrar/{$equipo->id_equipo}" class="d-flex justify-content-center btn btn-outline-primary" value="{$equipo->id_equipo}">Ver más</a>
+        </div>
+    </div>   
+<?php endforeach ?>
+
+
+    
+
+

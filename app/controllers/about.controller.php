@@ -7,7 +7,6 @@ class AboutController {
    
 
     public function __construct() {
-        AuthHelper::verify();
         $this->view = new AboutView();
     } 
 
