@@ -7,7 +7,8 @@ class JugadoresView {
         require 'templates/jugadorList.phtml';
     }
 
-   
+    
+    
     
 
 

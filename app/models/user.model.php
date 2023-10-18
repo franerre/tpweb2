@@ -1,5 +1,5 @@
 <?php
-
+require_once 'app/models/model.php';
 class UserModel {
     private $db;
 
@@ -8,9 +8,9 @@ class UserModel {
         
     }
 
-    public function getByEmail($email) {
-        $query = $this->db->prepare('SELECT * FROM usuarios WHERE email = ?');
-        $query->execute([$email]);
+    public function getByUsuario($usuario) {
+        $query = $this->db->prepare('SELECT * FROM usuarios WHERE usuario = ?');
+        $query->execute([$usuario]);
 
         return $query->fetch(PDO::FETCH_OBJ);
     }

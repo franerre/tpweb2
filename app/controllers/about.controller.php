@@ -2,6 +2,7 @@
 require_once './app/views/about.view.php';
 require_once './app/helpers/auth.helper.php';
 
+
 class AboutController {
     private $view;
    

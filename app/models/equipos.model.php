@@ -1,5 +1,5 @@
 <?php
-
+require_once 'app/models/model.php';
 class EquiposModel {
     private $db;
 
@@ -23,13 +23,22 @@ class EquiposModel {
      * Inserta al equipo en la base de datos
      */
 
-    function insertEquipos($equipo, $liga, $pais) {
-        $query = $this->db->prepare('INSERT INTO equipos (equipo, liga, pais) VALUES(?,?,?)');
-        $query->execute([$equipo, $liga, $pais]);
-
+     function insertEquipos($equipo, $liga, $pais) {
+       
+            
+    
+            $query = $this->db->prepare('INSERT INTO equipos (equipo, liga, pais) VALUES(?,?,?)');
+            $query->execute([$equipo, $liga, $pais]);
+        
+    
         return $this->db->lastInsertId();
     }
+    
 
+    
+    
+    
+    
 
     function deleteEquipos($id) {
         $query = $this->db->prepare('DELETE FROM equipos WHERE id = ?');
@@ -42,14 +51,16 @@ class EquiposModel {
         $query = $this->db->prepare('SELECT * FROM equipos WHERE id = ?');
         $query->execute([$id]);
 
-        // $task es un objeto que representa al jugador
+
         $equipo = $query->fetch(PDO::FETCH_OBJ);
 
         return $equipo;
+    }
+
+   
     }
     
     
    
     
     
-}

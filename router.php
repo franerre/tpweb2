@@ -1,4 +1,5 @@
 <?php
+require_once 'config.php';
 require_once './app/controllers/jugadores.controller.php';
 require_once './app/controllers/equipos.controller.php';
 require_once './app/controllers/home.controller.php';
@@ -30,10 +31,12 @@ switch ($params[0]) {
         $homeController = new HomeController();
         $homeController->showHome();
         break;
-        case 'verjugadores':
-            $controller = new EquiposController();
-            $controller->verJugadores($params[1]);
-            break;
+       // Agrega una nueva ruta para ver jugadores por equipo
+    case 'verjugadores':
+        $controller = new HomeController();
+        $controller->showJugadoresEquipo($params[1]);
+        break;
+
         
     case 'jugadores':
         $controller = new JugadoresController();

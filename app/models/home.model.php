@@ -1,5 +1,5 @@
 <?php
-
+require_once 'app/models/model.php';
 class HomeModel {
 
     private $db;
@@ -34,6 +34,22 @@ class HomeModel {
         
         return $jugadores;
     }
+
+    public function getJugadoresByEquipo($id_equipo) {
+        // 1. Preparar la consulta SQL para obtener jugadores de un equipo específico.
+        $sql = "SELECT * FROM jugadores WHERE id_equipo = :id_equipo";
+    
+        // 2. Ejecutar la consulta utilizando parámetros.
+        $consulta = $this->db->prepare($sql);
+        $consulta->bindParam(':id_equipo', $id_equipo, PDO::PARAM_INT);
+        $consulta->execute();
+    
+        // 3. Obtener los resultados.
+        $jugadores = $consulta->fetchAll(PDO::FETCH_OBJ);
+    
+        return $jugadores;
+    }
+    
 
 
 }

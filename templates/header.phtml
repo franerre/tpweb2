@@ -40,7 +40,7 @@
             <?php else : ?>
 
                         <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="">Futbol</a>
+                        <a class="nav-link" aria-current="page" href="home">Futbol</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="<?= BASE_URL ?>equipos">Equipos</a>
@@ -48,7 +48,7 @@
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="<?= BASE_URL ?>jugadores">Jugadores</a>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="logout">Logout (<?= $_SESSION['USER_EMAIL'] ?>)</a>
+                            <a class="nav-link" aria-current="page" href="logout">Logout (<?= $_SESSION['USER_USUARIO'] ?>)</a>
                         </li>
                         <?php endif ?>
                     </ul>
