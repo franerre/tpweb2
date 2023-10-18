@@ -17,7 +17,14 @@ class EquiposController {
         
     }
 
-   
+    public function verJugadores($id_equipo) {
+        // Lógica para obtener los jugadores asociados al equipo con el ID $id_equipo
+        $jugadoresModel = new JugadoresModel();
+        $jugadores = $jugadoresModel->getJugadoresByEquipo($id_equipo);
+        
+        // Luego, muestra la vista que contiene la lista de jugadores
+        $this->view->showJugadores($jugadores, $equipos);
+    }
 
 
     public function showEquipos() {
@@ -58,13 +65,26 @@ class EquiposController {
         header('Location: ' . BASE_URL . 'equipos');
     }
 
-   
-    
-    
-    
+    public function editEquipos($id) {
+        $equipo = $this->model->getEquiposById($id);
+        $this->view->showEditForm($equipo);
+    }
 
+    public function updateEquipos() {
+        if (isset($_POST['id']) && isset($_POST['equipo']) && isset($_POST['liga']) && isset($_POST['pais'])) {
+            if (!empty($_POST['id']) && !empty($_POST['equipo']) && !empty($_POST['liga']) && !empty($_POST['pais'])) {
+                $id = $_POST['id'];
+                $equipo = $_POST['equipo'];
+                $liga = $_POST['liga'];
+                $pais = $_POST['pais'];
 
+                $this->model->updateEquiposData($id, $equipo, $liga, $pais);
 
+                header("Location: " . BASE_URL . "equipos");
+            }
+        }
+    }
+    
     
     
 

@@ -1,30 +1,26 @@
-<form action="<?= BASE_URL ?>" method="POST" class="my-4">
+<form action="actualizar" method="POST" class="my-4">
     <input type="hidden" name="id" value="<?= $jugador->id ?>">
-    <!-- Resto del formulario para editar los datos del jugador -->
-    <div class="row">
-            <div class="form-group">
-                <label>Nombre</label>
-                <input required name="nombre" type="text" class="form-control" value="<?= $jugador->nombre ?>">
-                <label>Apellido</label>
-                <input required name ="apellido" type="text" class="form-control" value="<?= $jugador->apellido ?>">
-                    
-                        <label>Equipo</label>
-                        <select required name="id_equipo" class="form-control">
-                            <option value="1">Manchester City</option>
-                            <option value="2">Lille Olympique</option>
-                            <option value="3">Inter de Milán</option>
-                            <option value="4">Napoli</option>
-                            <option value="5">PSG</option>
-                            <option value="6">La Roma</option>
-                            <option value="7">Bayern de Múnich</option>
-                            <option value="8">Ittihad FC</option>
-                            <option value="9">Olympique de Lyon</option>
-                            <option value="10">Barcelona</option>
-                        </select>
-                  
-            </div>
-        </div>
+   <!-- formulario de jugadores -->
+    <div class="form-group">
+        <label>Nombre</label>
+        <input required name="nombre" type="text" class="form-control">
+        <label>Apellido</label>
+        <input required name="apellido" type="text" class="form-control">
+
+        <label>Equipo</label>
+        <select required name="id_equipo" class="form-control">
+            <?php foreach ($equipos as $id => $nombre) : ?>
+                
+                
+                <option value="<?= $id ?>"><?= $nombre->equipo?></option>
+
+            <?php endforeach ?>
+        </select>
+
+
+        <button type="submit" class="btn btn-primary mt-2">Guardar</button>
     </div>
-    <button type="submit" class="btn btn-primary mt-2">Guardar Cambios</button>
+</form>
+
     
 </form>

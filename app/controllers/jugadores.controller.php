@@ -57,33 +57,27 @@ class JugadoresController {
    
 
     public function editJugadores($id) {
-        
         $jugador = $this->model->getJugadoresById($id);
-        $this->view->showEditForm($jugador);
+        $equiposModel = new EquiposModel();
+        $equipos = $equiposModel->getEquipos();
+        $this->view->showEditForm($jugador, $equipos);
     }
     
-
-    /*public function updateJugadores() {
-        // Verifica si se ha enviado un formulario POST
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Obtén los datos del formulario
-            $id = $_POST['id'];
-            $nombre = $_POST['nombre'];
-            $apellido = $_POST['apellido'];
-            $id_equipo = $_POST['id_equipo'];
+    public function updateJugadores($id) {
+        if (isset($_POST['id']) && isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['id_equipo'])) {
+            if (!empty($_POST['id']) && !empty($_POST['nombre']) && !empty($_POST['apellido']) && !empty($_POST['id_equipo'])) {
+                $id = $_POST['id'];
+                $nombre = $_POST['nombre'];
+                $apellido = $_POST['apellido'];
+                $id_equipo = $_POST['id_equipo'];
     
-            // Realiza la actualización en el modelo
-            $result = $this->model->updateJugadoresData($id, $nombre, $apellido, $id_equipo);
+                $this->model->updateJugadoresData($id, $nombre, $apellido, $id_equipo);
     
-            if ($result) {
-                // Redirige de regreso a la lista de jugadores
-                header('Location: ' . BASE_URL);
-            } else {
-                $this->view->showError("Error al actualizar el jugador");
+                header("Location: " . BASE_URL . "jugadores");
             }
         }
     }
-    */
+    
     
 
   

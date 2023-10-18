@@ -57,6 +57,14 @@ class EquiposModel {
         return $equipo;
     }
 
+    
+    
+    function updateEquiposData($id, $equipo, $liga, $pais) {
+        $query = $this->db->prepare('UPDATE equipos SET equipo = ?, liga = ?, pais = ? WHERE id = ?');
+        $query->execute([$equipo, $liga, $pais, $id]);
+    }
+    
+
    
     }
     

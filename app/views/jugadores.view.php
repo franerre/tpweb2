@@ -5,22 +5,20 @@ class JugadoresView {
     public function showJugadores($jugadores, $equipos) {
         $count = count($jugadores);
         require 'templates/jugadorList.phtml';
+       
     }
 
     
     
-    
-
 
     public function showError($error) {
         require 'templates/error.phtml';
     }
-    public function showEditForm($jugador) {
-        // NOTA: Debes crear un nuevo template para la edición (editJugador.phtml)
-        // y dentro de ese archivo, construir el formulario de edición
-
-        // mostrar el template de edición
-        require 'templates/editJugador.phtml';
+    
+    public function showEditForm($jugador, $equipos) {
+        require_once 'templates/header.phtml';
+        require_once 'templates/editJugador.phtml';
+        require_once 'templates/footer.phtml';
     }
     
 
