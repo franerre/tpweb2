@@ -49,7 +49,6 @@ class JugadoresModel {
         $query = $this->db->prepare('SELECT * FROM jugadores WHERE id = ?');
         $query->execute([$id]);
 
-        // $task es un objeto que representa al jugador
         $jugador = $query->fetch(PDO::FETCH_OBJ);
 
         return $jugador;
@@ -61,9 +60,8 @@ class JugadoresModel {
     function updateJugadoresData($id, $nombre, $apellido, $id_equipo) {
         $query = $this->db->prepare('UPDATE jugadores SET nombre = ?, apellido = ?, id_equipo = ? WHERE id = ?');
         $query->execute([$nombre, $apellido, $id_equipo, $id]);
-    
-        return $query->rowCount(); // Devuelve el número de filas afectadas por la actualización
     }
+    
     
     
 }
