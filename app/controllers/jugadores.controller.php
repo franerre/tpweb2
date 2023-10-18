@@ -25,9 +25,6 @@ class JugadoresController {
         $this->view->showJugadores($jugadores, $equipos); 
         
     }
-
-    
-   
     
     public function addJugadores() {
 

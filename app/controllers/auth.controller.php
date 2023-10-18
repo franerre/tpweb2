@@ -2,7 +2,8 @@
 require_once './app/views/auth.view.php';
 require_once './app/models/user.model.php';
 require_once './app/helpers/auth.helper.php';
-require_once './app/update_passwords.php';
+
+
 
 class AuthController {
     private $view;
@@ -18,15 +19,15 @@ class AuthController {
     }
 
     public function auth() {
-        $email = $_POST['email'];
+        $usuario = $_POST['usuario'];
         $password = $_POST['password'];
     
-        if (empty($email) || empty($password)) {
+        if (empty($usuario) || empty($password)) {
             $this->view->showLogin('Faltan completar datos');
             return;
         }
 
-        $user = $this->model->getByEmail($email);
+        $user = $this->model->getByUsuario($usuario);
         
         if ($user && password_verify($password, $user->password)) {
             var_dump($user);
